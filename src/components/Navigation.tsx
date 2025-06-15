@@ -1,9 +1,8 @@
-
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 
 const Navigation = () => {
-  const navRef = useRef<HTMLNavElement>(null);
+  const navRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
