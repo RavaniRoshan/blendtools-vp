@@ -15,21 +15,32 @@ const Index = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Initial page load animation
-      gsap.fromTo('.page-enter', 
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.8, stagger: 0.1, ease: 'power2.out' }
-      );
-
-      // Smooth scroll behavior
-      gsap.to(window, {
-        scrollTo: { y: 0, autoKill: false },
-        duration: 0.001
+      // Smooth scroll behavior - reduced motion for mobile
+      const mm = gsap.matchMedia();
+      
+      mm.add("(prefers-reduced-motion: no-preference)", () => {
+        gsap.to(window, {
+          scrollTo: { y: 0, autoKill: false },
+          duration: 0.001
+        });
       });
+
+      // Refresh ScrollTrigger on resize for responsive behavior
+      ScrollTrigger.refresh();
 
     }, containerRef);
 
-    return () => ctx.revert();
+    // Handle resize events
+    const handleResize = () => {
+      ScrollTrigger.refresh();
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      ctx.revert();
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   return (

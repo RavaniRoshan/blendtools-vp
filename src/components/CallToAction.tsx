@@ -25,19 +25,23 @@ const CallToAction = () => {
         }
       );
 
-      // Animated background elements
-      gsap.to('.cta-bg-1', {
-        rotation: 360,
-        duration: 20,
-        ease: 'none',
-        repeat: -1
-      });
+      // Animated background elements (reduced motion on mobile)
+      const mm = gsap.matchMedia();
+      
+      mm.add("(prefers-reduced-motion: no-preference)", () => {
+        gsap.to('.cta-bg-1', {
+          rotation: 360,
+          duration: 20,
+          ease: 'none',
+          repeat: -1
+        });
 
-      gsap.to('.cta-bg-2', {
-        rotation: -360,
-        duration: 25,
-        ease: 'none',
-        repeat: -1
+        gsap.to('.cta-bg-2', {
+          rotation: -360,
+          duration: 25,
+          ease: 'none',
+          repeat: -1
+        });
       });
 
     }, ctaRef);
@@ -46,40 +50,40 @@ const CallToAction = () => {
   }, []);
 
   return (
-    <section id="download" ref={ctaRef} className="py-32 px-6 relative overflow-hidden bg-blender-bg-primary">
-      {/* Animated background */}
+    <section id="download" ref={ctaRef} className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 relative overflow-hidden bg-blender-bg-primary">
+      {/* Animated background - responsive sizes */}
       <div className="absolute inset-0">
-        <div className="cta-bg-1 absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blender-accent-primary/20 to-blender-accent-secondary/20 rounded-full blur-3xl"></div>
-        <div className="cta-bg-2 absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-blender-accent-secondary/20 to-blender-accent-primary/20 rounded-full blur-3xl"></div>
+        <div className="cta-bg-1 absolute top-1/4 left-1/4 w-48 h-48 sm:w-64 sm:h-64 lg:w-96 lg:h-96 bg-gradient-to-r from-blender-accent-primary/20 to-blender-accent-secondary/20 rounded-full blur-3xl"></div>
+        <div className="cta-bg-2 absolute bottom-1/4 right-1/4 w-48 h-48 sm:w-64 sm:h-64 lg:w-96 lg:h-96 bg-gradient-to-r from-blender-accent-secondary/20 to-blender-accent-primary/20 rounded-full blur-3xl"></div>
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         <div className="cta-content">
-          <h2 className="text-heading-1 text-5xl md:text-7xl mb-8 bg-gradient-to-r from-blender-text-primary via-blender-text-secondary to-blender-text-primary bg-clip-text text-transparent">
+          <h2 className="text-heading-1 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-6 sm:mb-8 bg-gradient-to-r from-blender-text-primary via-blender-text-secondary to-blender-text-primary bg-clip-text text-transparent">
             Ready to Create?
           </h2>
           
-          <p className="text-xl md:text-2xl text-blender-text-muted mb-12 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-blender-text-muted mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed px-4">
             Join thousands of 3D artists who are already using AI to accelerate their creative workflow. 
             Download Blender AI Agent and transform your ideas into reality.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-12">
-            <button className="btn-primary group px-12 py-5 text-xl font-bold">
-              <span className="flex items-center gap-3">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-8 sm:mb-12 px-4">
+            <button className="btn-primary group w-full sm:w-auto px-8 sm:px-12 py-4 sm:py-5 text-lg sm:text-xl font-bold min-h-[44px]">
+              <span className="flex items-center justify-center gap-3">
                 Download Now
-                <svg className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 sm:w-6 sm:h-6 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8l-8 8-8-8" />
                 </svg>
               </span>
             </button>
             
-            <button className="btn-secondary px-12 py-5 text-xl font-bold">
+            <button className="btn-secondary w-full sm:w-auto px-8 sm:px-12 py-4 sm:py-5 text-lg sm:text-xl font-bold min-h-[44px]">
               View on GitHub
             </button>
           </div>
 
-          <div className="flex items-center justify-center gap-8 text-blender-text-muted text-sm">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-blender-text-muted text-xs sm:text-sm">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-green-500 rounded-full"></div>
               Windows 10/11

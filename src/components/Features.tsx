@@ -27,20 +27,25 @@ const Features = () => {
         }
       });
 
-      // Hover animations for feature cards
-      gsap.utils.toArray('.feature-card').forEach((card: any) => {
-        const tl = gsap.timeline({
-          paused: true
+      // Hover animations for feature cards (only on non-touch devices)
+      const mm = gsap.matchMedia();
+      
+      mm.add("(hover: hover)", () => {
+        gsap.utils.toArray('.feature-card').forEach((card: any) => {
+          const tl = gsap.timeline({
+            paused: true
+          });
+          tl.to(card, {
+            y: -10,
+            scale: 1.05,
+            duration: 0.3,
+            ease: 'power2.out'
+          });
+          card.addEventListener('mouseenter', () => tl.play());
+          card.addEventListener('mouseleave', () => tl.reverse());
         });
-        tl.to(card, {
-          y: -10,
-          scale: 1.05,
-          duration: 0.3,
-          ease: 'power2.out'
-        });
-        card.addEventListener('mouseenter', () => tl.play());
-        card.addEventListener('mouseleave', () => tl.reverse());
       });
+
     }, featuresRef);
 
     return () => ctx.revert();
@@ -80,28 +85,28 @@ const Features = () => {
   ];
 
   return (
-    <section id="features" ref={featuresRef} className="py-32 px-6 relative bg-blender-bg-primary">
+    <section id="features" ref={featuresRef} className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 relative bg-blender-bg-primary">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-20">
-          <h2 className="text-heading-1 text-5xl md:text-6xl mb-6 bg-gradient-to-r from-blender-text-primary to-blender-text-secondary bg-clip-text text-transparent">
+        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+          <h2 className="text-heading-1 text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 sm:mb-6 bg-gradient-to-r from-blender-text-primary to-blender-text-secondary bg-clip-text text-transparent">
             Why Choose Blender AI Agent?
           </h2>
-          <p className="text-xl text-blender-text-muted max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg lg:text-xl text-blender-text-muted max-w-3xl mx-auto px-4">
             Experience the future of 3D modeling with AI-powered automation and professional-grade results.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {features.map((feature, index) => (
             <div key={index} className="feature-card group">
-              <div className="card relative h-full hover:border-blender-border-focus transition-all duration-300 group-hover:bg-blender-bg-tertiary">
-                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
+              <div className="card relative h-full hover:border-blender-border-focus transition-all duration-300 group-hover:bg-blender-bg-tertiary touch-manipulation">
+                <div className="text-3xl sm:text-4xl mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300">
                   {feature.icon}
                 </div>
-                <h3 className="text-heading-3 text-blender-text-primary mb-4">
+                <h3 className="text-heading-3 text-blender-text-primary mb-3 sm:mb-4 text-lg sm:text-xl">
                   {feature.title}
                 </h3>
-                <p className="text-blender-text-muted leading-relaxed">
+                <p className="text-blender-text-muted leading-relaxed text-sm sm:text-base">
                   {feature.description}
                 </p>
                 
