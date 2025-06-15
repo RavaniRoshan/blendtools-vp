@@ -81,8 +81,11 @@ const Hero = () => {
         </p>
 
         <div ref={ctaRef} className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 px-4">
-          <button className="btn-primary w-full sm:w-auto px-6 sm:px-8 py-4 text-base sm:text-lg font-semibold min-h-[44px]">
-            Download for Windows
+          <button 
+            onClick={() => window.location.href = '/setup'}
+            className="btn-primary w-full sm:w-auto px-6 sm:px-8 py-4 text-base sm:text-lg font-semibold min-h-[44px]"
+          >
+            Get Started
           </button>
           <button className="btn-secondary w-full sm:w-auto px-6 sm:px-8 py-4 text-base sm:text-lg font-semibold min-h-[44px]">
             Watch Demo
