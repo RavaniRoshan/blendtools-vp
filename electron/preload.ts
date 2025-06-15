@@ -17,19 +17,3 @@ contextBridge.exposeInMainWorld('electronAPI', {
   platform: process.platform,
   versions: process.versions
 });
-
-// Type definitions for the exposed API
-export interface ElectronAPI {
-  detectBlender: () => Promise<{ success: boolean; version?: string; error?: string }>;
-  executeBlenderScript: (scriptPath: string) => Promise<{ success: boolean; stdout?: string; stderr?: string; error?: string }>;
-  saveConfig: (config: any) => Promise<{ success: boolean }>;
-  loadConfig: () => Promise<{ success: boolean; config?: any }>;
-  platform: string;
-  versions: any;
-}
-
-declare global {
-  interface Window {
-    electronAPI: ElectronAPI;
-  }
-}
