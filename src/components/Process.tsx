@@ -53,19 +53,19 @@ const Process = () => {
       number: '01',
       title: 'Connect Your AI',
       description: 'Add your OpenAI, Anthropic, or local LLM credentials. Test the connection with one click.',
-      color: 'from-purple-500 to-pink-500'
+      color: 'from-accent to-blue'
     },
     {
       number: '02',
       title: 'Find Blender',
       description: 'Auto-detect your Blender installation or browse to select it manually. Version compatibility checked.',
-      color: 'from-pink-500 to-red-500'
+      color: 'from-blue to-accent'
     },
     {
       number: '03',
       title: 'Start Creating',
       description: 'Chat naturally about your 3D vision. Watch as AI generates and executes Blender scripts automatically.',
-      color: 'from-red-500 to-orange-500'
+      color: 'from-accent to-blue'
     }
   ];
 
@@ -73,10 +73,10 @@ const Process = () => {
     <section id="process" ref={processRef} className="py-32 px-6 relative">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-20">
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">
+          <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-text to-text-muted bg-clip-text text-transparent">
             Simple 3-Step Setup
           </h2>
-          <p className="text-xl text-white/70 max-w-3xl mx-auto">
+          <p className="text-xl text-text-muted max-w-3xl mx-auto">
             Get started in minutes. No complex configuration or technical knowledge required.
           </p>
         </div>
@@ -87,13 +87,13 @@ const Process = () => {
               <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
                 {/* Step number and content */}
                 <div className="flex-1 text-center lg:text-left">
-                  <div className={`inline-block px-4 py-2 rounded-full bg-gradient-to-r ${step.color} text-white font-bold text-sm mb-4`}>
+                  <div className={`inline-block px-4 py-2 rounded-full bg-gradient-to-r ${step.color} text-text font-bold text-sm mb-4`}>
                     STEP {step.number}
                   </div>
-                  <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                  <h3 className="text-3xl md:text-4xl font-bold text-text mb-4">
                     {step.title}
                   </h3>
-                  <p className="text-lg text-white/70 leading-relaxed max-w-lg mx-auto lg:mx-0">
+                  <p className="text-lg text-text-muted leading-relaxed max-w-lg mx-auto lg:mx-0">
                     {step.description}
                   </p>
                 </div>
@@ -103,8 +103,8 @@ const Process = () => {
                   <div className="relative">
                     <div className={`w-32 h-32 rounded-2xl bg-gradient-to-br ${step.color} opacity-20 rotate-12`}></div>
                     <div className={`absolute inset-0 w-32 h-32 rounded-2xl bg-gradient-to-br ${step.color} opacity-40 -rotate-6`}></div>
-                    <div className="absolute inset-0 w-32 h-32 rounded-2xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 flex items-center justify-center">
-                      <span className="text-3xl font-bold text-white">{step.number}</span>
+                    <div className="absolute inset-0 w-32 h-32 rounded-2xl bg-gradient-to-br from-secondary/10 to-secondary/5 backdrop-blur-sm border border-secondary flex items-center justify-center">
+                      <span className="text-3xl font-bold text-text">{step.number}</span>
                     </div>
                   </div>
                 </div>
@@ -112,7 +112,7 @@ const Process = () => {
 
               {/* Connecting line */}
               {index < steps.length - 1 && (
-                <div className="process-line absolute left-1/2 transform -translate-x-1/2 w-0.5 h-16 bg-gradient-to-b from-purple-500 to-pink-500 mt-8 origin-top"></div>
+                <div className="process-line absolute left-1/2 transform -translate-x-1/2 w-0.5 h-16 bg-gradient-to-b from-accent to-blue mt-8 origin-top"></div>
               )}
             </div>
           ))}

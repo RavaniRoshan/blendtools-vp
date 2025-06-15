@@ -77,10 +77,10 @@ const Features = () => {
     <section id="features" ref={featuresRef} className="py-32 px-6 relative">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20">
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">
+          <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-text to-text-muted bg-clip-text text-transparent">
             Why Choose Blender AI Agent?
           </h2>
-          <p className="text-xl text-white/70 max-w-3xl mx-auto">
+          <p className="text-xl text-text-muted max-w-3xl mx-auto">
             Experience the future of 3D modeling with AI-powered automation and professional-grade results.
           </p>
         </div>
@@ -88,19 +88,19 @@ const Features = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <div key={index} className="feature-card group">
-              <div className="relative p-8 h-full bg-gradient-to-br from-white/5 to-white/10 rounded-2xl border border-white/10 backdrop-blur-sm hover:border-purple-500/30 transition-all duration-300">
+              <div className="relative p-8 h-full bg-gradient-to-br from-secondary/50 to-secondary/80 rounded-2xl border border-secondary backdrop-blur-sm hover:border-accent/30 transition-all duration-300">
                 <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
                   {feature.icon}
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-4">
+                <h3 className="text-2xl font-bold text-text mb-4">
                   {feature.title}
                 </h3>
-                <p className="text-white/70 leading-relaxed">
+                <p className="text-text-muted leading-relaxed">
                   {feature.description}
                 </p>
                 
                 {/* Hover glow effect */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-purple-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-accent/10 to-blue/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
               </div>
             </div>
           ))}

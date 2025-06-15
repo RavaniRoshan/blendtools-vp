@@ -49,23 +49,23 @@ const CallToAction = () => {
     <section id="download" ref={ctaRef} className="py-32 px-6 relative overflow-hidden">
       {/* Animated background */}
       <div className="absolute inset-0">
-        <div className="cta-bg-1 absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-3xl"></div>
-        <div className="cta-bg-2 absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-pink-500/20 to-purple-500/20 rounded-full blur-3xl"></div>
+        <div className="cta-bg-1 absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-accent/20 to-blue/20 rounded-full blur-3xl"></div>
+        <div className="cta-bg-2 absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-blue/20 to-accent/20 rounded-full blur-3xl"></div>
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         <div className="cta-content">
-          <h2 className="text-5xl md:text-7xl font-bold mb-8 bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text text-transparent">
+          <h2 className="text-5xl md:text-7xl font-bold mb-8 bg-gradient-to-r from-text via-text-muted to-text bg-clip-text text-transparent">
             Ready to Create?
           </h2>
           
-          <p className="text-xl md:text-2xl text-white/70 mb-12 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-text-muted mb-12 max-w-3xl mx-auto leading-relaxed">
             Join thousands of 3D artists who are already using AI to accelerate their creative workflow. 
             Download Blender AI Agent and transform your ideas into reality.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-12">
-            <button className="group px-12 py-5 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-xl font-bold rounded-full hover:shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 transform hover:scale-105">
+            <button className="group px-12 py-5 bg-gradient-to-r from-accent to-blue text-text text-xl font-bold rounded-full hover:shadow-2xl hover:shadow-accent/25 transition-all duration-300 transform hover:scale-105">
               <span className="flex items-center gap-3">
                 Download Now
                 <svg className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -74,22 +74,22 @@ const CallToAction = () => {
               </span>
             </button>
             
-            <button className="px-12 py-5 border-2 border-white/20 text-white text-xl font-bold rounded-full hover:bg-white/10 transition-all duration-300">
+            <button className="px-12 py-5 border-2 border-secondary text-text text-xl font-bold rounded-full hover:bg-secondary/50 transition-all duration-300">
               View on GitHub
             </button>
           </div>
 
-          <div className="flex items-center justify-center gap-8 text-white/50 text-sm">
+          <div className="flex items-center justify-center gap-8 text-text-muted text-sm">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-green-500 rounded-full"></div>
               Windows 10/11
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+              <div className="w-2 h-2 bg-blue rounded-full"></div>
               Free & Open Source
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+              <div className="w-2 h-2 bg-accent rounded-full"></div>
               Regular Updates
             </div>
           </div>
