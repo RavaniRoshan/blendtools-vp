@@ -1,8 +1,11 @@
+
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
 const Features = () => {
   const featuresRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo('.feature-card', {
@@ -39,63 +42,78 @@ const Features = () => {
         card.addEventListener('mouseleave', () => tl.reverse());
       });
     }, featuresRef);
+
     return () => ctx.revert();
   }, []);
-  const features = [{
-    title: 'Universal AI Support',
-    description: 'Connect OpenAI, Anthropic, Mistral, or your local LLMs. One interface, endless possibilities.',
-    icon: '🤖'
-  }, {
-    title: 'Natural Conversations',
-    description: 'Just chat about what you want to create. No complex commands or scripts needed.',
-    icon: '💬'
-  }, {
-    title: 'Instant Blender Integration',
-    description: 'AI-generated Python scripts execute automatically in Blender. See results in real-time.',
-    icon: '⚡'
-  }, {
-    title: 'Professional Results',
-    description: 'Built-in Blender expertise ensures high-quality, production-ready 3D models.',
-    icon: '🎯'
-  }, {
-    title: 'Secure & Private',
-    description: 'Your API keys stay encrypted locally. No data sent to external servers.',
-    icon: '🔒'
-  }, {
-    title: 'Artist-Friendly',
-    description: 'Designed by 3D artists, for 3D artists. Clean, intuitive, and powerful.',
-    icon: '🎨'
-  }];
-  return <section id="features" ref={featuresRef} className="py-32 px-6 relative">
+
+  const features = [
+    {
+      title: 'Universal AI Support',
+      description: 'Connect OpenAI, Anthropic, Mistral, or your local LLMs. One interface, endless possibilities.',
+      icon: '🤖'
+    },
+    {
+      title: 'Natural Conversations',
+      description: 'Just chat about what you want to create. No complex commands or scripts needed.',
+      icon: '💬'
+    },
+    {
+      title: 'Instant Blender Integration',
+      description: 'AI-generated Python scripts execute automatically in Blender. See results in real-time.',
+      icon: '⚡'
+    },
+    {
+      title: 'Professional Results',
+      description: 'Built-in Blender expertise ensures high-quality, production-ready 3D models.',
+      icon: '🎯'
+    },
+    {
+      title: 'Secure & Private',
+      description: 'Your API keys stay encrypted locally. No data sent to external servers.',
+      icon: '🔒'
+    },
+    {
+      title: 'Artist-Friendly',
+      description: 'Designed by 3D artists, for 3D artists. Clean, intuitive, and powerful.',
+      icon: '🎨'
+    }
+  ];
+
+  return (
+    <section id="features" ref={featuresRef} className="py-32 px-6 relative bg-blender-bg-primary">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20">
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-text to-text-muted bg-clip-text text-transparent">
+          <h2 className="text-heading-1 text-5xl md:text-6xl mb-6 bg-gradient-to-r from-blender-text-primary to-blender-text-secondary bg-clip-text text-transparent">
             Why Choose Blender AI Agent?
           </h2>
-          <p className="text-xl text-text-muted max-w-3xl mx-auto">
+          <p className="text-xl text-blender-text-muted max-w-3xl mx-auto">
             Experience the future of 3D modeling with AI-powered automation and professional-grade results.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {features.map((feature, index) => <div key={index} className="feature-card group">
-              <div className="relative p-8 h-full bg-gradient-to-br from-secondary/50 to-secondary/80 rounded-2xl border border-secondary backdrop-blur-sm hover:border-accent/30 transition-all duration-300">
+          {features.map((feature, index) => (
+            <div key={index} className="feature-card group">
+              <div className="card relative h-full hover:border-blender-border-focus transition-all duration-300 group-hover:bg-blender-bg-tertiary">
                 <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
                   {feature.icon}
                 </div>
-                <h3 className="text-2xl font-bold text-text mb-4">
+                <h3 className="text-heading-3 text-blender-text-primary mb-4">
                   {feature.title}
                 </h3>
-                <p className="text-text-muted leading-relaxed text-gray-50">
+                <p className="text-blender-text-muted leading-relaxed">
                   {feature.description}
                 </p>
                 
                 {/* Hover glow effect */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-accent/10 to-blue/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+                <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-blender-accent-primary/10 to-blender-accent-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
               </div>
-            </div>)}
+            </div>
+          ))}
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default Features;

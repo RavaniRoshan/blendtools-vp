@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -19,12 +20,33 @@ export default {
 		},
 		extend: {
 			colors: {
+				// Blender Professional Theme
+				'blender': {
+					'bg-primary': '#191919',
+					'bg-secondary': '#2d2d2d',
+					'bg-tertiary': '#3d3d3d',
+					'bg-input': '#262626',
+					'accent-primary': '#ff8c00',
+					'accent-secondary': '#4a90e2',
+					'accent-hover': '#ff9f1a',
+					'accent-pressed': '#e57c00',
+					'text-primary': '#ffffff',
+					'text-secondary': '#d0d0d0',
+					'text-muted': '#a0a0a0',
+					'text-disabled': '#666666',
+					'border-primary': '#404040',
+					'border-secondary': '#333333',
+					'border-focus': '#ff8c00',
+					'divider': '#2a2a2a'
+				},
+				// Legacy colors for compatibility
 				primary: '#191919',
 				secondary: '#2d2d2d',
 				accent: '#ff8c00',
 				blue: '#4a90e2',
 				text: '#ffffff',
 				'text-muted': '#a0a0a0',
+				// Shadcn colors
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',

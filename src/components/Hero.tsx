@@ -57,34 +57,34 @@ const Hero = () => {
   }, []);
 
   return (
-    <section ref={heroRef} className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+    <section ref={heroRef} className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-blender-bg-primary">
       {/* Animated background */}
       <div className="hero-bg absolute inset-0 opacity-20">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blender-accent-primary rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blender-accent-secondary rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>
 
       <div className="relative z-10 text-center max-w-6xl mx-auto px-6">
         <h1 ref={titleRef} className="text-6xl md:text-8xl font-bold mb-6">
-          <span className="bg-gradient-to-r from-text via-text-muted to-text bg-clip-text text-transparent">
+          <span className="text-heading-1">
             Create 3D Models
           </span>
           <br />
-          <span className="bg-gradient-to-r from-accent via-blue to-accent bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-blender-accent-primary via-blender-accent-secondary to-blender-accent-primary bg-clip-text text-transparent">
             with AI Magic
           </span>
         </h1>
 
-        <p ref={subtitleRef} className="text-xl md:text-2xl text-text-muted mb-12 max-w-3xl mx-auto leading-relaxed">
+        <p ref={subtitleRef} className="text-xl md:text-2xl text-blender-text-muted mb-12 max-w-3xl mx-auto leading-relaxed">
           Transform your ideas into stunning 3D models through simple conversations. 
           Connect your AI, chat naturally, and watch Blender create automatically.
         </p>
 
         <div ref={ctaRef} className="flex flex-col sm:flex-row items-center justify-center gap-6">
-          <button className="px-8 py-4 bg-gradient-to-r from-accent to-blue text-text text-lg font-semibold rounded-full hover:shadow-2xl hover:shadow-accent/25 transition-all duration-300 transform hover:scale-105">
+          <button className="btn-primary px-8 py-4 text-lg font-semibold">
             Download for Windows
           </button>
-          <button className="px-8 py-4 border-2 border-secondary text-text text-lg font-semibold rounded-full hover:bg-secondary/50 transition-all duration-300">
+          <button className="btn-secondary px-8 py-4 text-lg font-semibold">
             Watch Demo
           </button>
         </div>
@@ -92,8 +92,8 @@ const Hero = () => {
         {/* Floating 3D cube animation */}
         <div ref={floatingRef} className="absolute top-1/2 right-10 transform -translate-y-1/2 hidden lg:block">
           <div className="w-24 h-24 relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-accent to-blue rounded-lg transform rotate-12 opacity-80"></div>
-            <div className="absolute inset-0 bg-gradient-to-r from-blue to-accent rounded-lg transform -rotate-12 opacity-60"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-blender-accent-primary to-blender-accent-secondary rounded-lg transform rotate-12 opacity-80"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-blender-accent-secondary to-blender-accent-primary rounded-lg transform -rotate-12 opacity-60"></div>
           </div>
         </div>
       </div>

@@ -33,7 +33,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-primary">
+    <div ref={containerRef} className="min-h-screen bg-blender-bg-primary">
       <Navigation />
       <main className="relative overflow-hidden">
         <Hero />
