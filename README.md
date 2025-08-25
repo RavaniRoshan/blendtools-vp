@@ -1,73 +1,76 @@
-# Welcome to your Lovable project
+# Blender AI Assistant
 
-## Project info
+A desktop application that uses a chat-based AI to control Blender, making 3D creation more accessible.
 
-**URL**: https://lovable.dev/projects/97d67d6f-16d1-46f2-aa22-4f9b3b5e86ce
+![Project Banner](public/placeholder.svg)
 
-## How can I edit this code?
+## Overview
 
-There are several ways of editing your application.
+Blender AI Assistant is a powerful desktop application that revolutionizes the 3D design workflow. It provides a user-friendly, chat-based interface to control Blender using natural language commands. This app is designed for both beginners who are intimidated by Blender's steep learning curve and for experienced artists who want to speed up their workflow. By simply typing what you want to create or modify, the AI translates your words into actions within Blender.
 
-**Use Lovable**
+## Key Features
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/97d67d6f-16d1-46f2-aa22-4f9b3b5e86ce) and start prompting.
+- **AI Chat Interface:** Interact with Blender using simple, conversational language. No need to memorize complex shortcuts or navigate intricate menus.
+- **Guided Setup Wizard:** A step-by-step process to connect the application with your Blender installation and configure the AI service.
+- **Cross-Platform Compatibility:** Built with Electron, the application can be packaged for Windows, macOS, and Linux.
+- **Modern UI:** A sleek and intuitive user interface built with React, TypeScript, and shadcn/ui.
 
-Changes made via Lovable will be committed automatically to this repo.
+## Technologies Used
 
-**Use your preferred IDE**
+- **Frontend:** React, TypeScript, Vite, Tailwind CSS, shadcn/ui
+- **Desktop:** Electron
+- **Backend/Integration:** Node.js (for IPC with Blender)
+- **Other:** GSAP (for animations)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Getting Started
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Prerequisites
 
-Follow these steps:
+- Node.js (v18 or higher recommended)
+- npm
+- Blender (the `blender` command must be available in your system's PATH)
+
+### Installation
+
+1.  Clone the repository to your local machine.
+2.  Navigate to the project directory.
+3.  Install the required dependencies using npm:
+    ```sh
+    npm install
+    ```
+
+## How to Run the Application
+
+To run the application in development mode, you'll need to run the Vite development server and the Electron app at the same time. A convenient script is provided in `package.json` to handle this.
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+npm run dev:electron
 ```
 
-**Edit a file directly in GitHub**
+This command will start the Vite server on `http://localhost:8080`, launch the Electron application, and open the browser's developer tools.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Project Structure
 
-**Use GitHub Codespaces**
+Here is a brief overview of the project's directory structure:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```
+/
+├── electron/         # Contains the Electron main process files
+├── public/           # Static assets like images and icons
+├── src/              # The source code for the React application
+│   ├── components/   # Reusable UI components (built with shadcn/ui)
+│   ├── pages/        # Application pages corresponding to routes
+│   ├── services/     # Modules for interacting with APIs or the Electron backend
+│   ├── hooks/        # Custom React hooks
+│   └── lib/          # Utility functions and libraries
+├── package.json      # Project metadata, dependencies, and scripts
+└── vite.config.ts    # Configuration file for Vite
+```
 
-## What technologies are used for this project?
+## Contributing
 
-This project is built with:
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## License
 
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/97d67d6f-16d1-46f2-aa22-4f9b3b5e86ce) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+This project is licensed under the MIT License.
